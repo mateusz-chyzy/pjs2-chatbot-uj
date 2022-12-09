@@ -1,0 +1,51 @@
+version: "3.1"
+stories:
+  - story: order 1
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_menu
+    - action: action_menu_fallback
+    - intent: order_dish
+    - action: action_order_fallback
+    - intent: get_order_list
+    - action: action_get_order_fallback
+    - intent: get_bill
+    - action: action_get_bill_fallback
+
+
+  - story: order 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: opening_information
+      - action: action_hours_fallback
+      - intent: get_menu
+      - action: action_menu_fallback
+      - intent: order_dish
+      - action: action_order_fallback
+      - intent: order_dish
+      - action: action_order_fallback
+      - intent: get_order_list
+      - action: action_get_order_fallback
+      - intent: order_dish
+      - action: action_order_fallback
+      - intent: get_bill
+      - action: action_get_bill_fallback
+
+  - story: order 3
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: opening_information
+      - action: action_hours_fallback
+      - intent: deny
+
+  - story: order 4
+    steps:
+       - intent: greet
+       - action: utter_greet
+       - intent: order_dish
+       - action: action_order_fallback
+       - intent: get_bill
+       - action: action_get_bill_fallback

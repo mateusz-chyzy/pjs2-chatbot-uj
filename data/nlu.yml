@@ -1,0 +1,81 @@
+version: "3.1"
+nlu:
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - good morning
+      - good evening
+      - hey there
+  - intent: goodbye
+    examples: |
+      - bye
+      - goodbye
+      - see you around
+      - see you later
+
+  - intent: opening_information
+    examples: |
+      - What time are you open?
+      - What time do you work ?
+      - time open
+      - Are you open in [Thursday](day) at [13](hour)?
+      - Do you deliver at [15](hour) in [Wednesday](day)?
+      - Do you open in [Monday](day) at [14](hour) p.m. ?
+      - Can i get this dish [Friday](day) about [10](hour)?
+
+  - intent: deny
+    examples: |
+      - I have cancelled my order
+      - i want to cancel
+      - cancel my order,please.
+      - I changed my mind, bye.
+      - However, I don't want to
+      - i have a call, sorry.
+      - I need to go.
+
+  - intent: get_menu
+    examples: |
+      - Show me a menu
+      - Can you show me menu ?
+      - What you can offer me?
+      - Can you give me a menu?
+      - Menu?
+
+  - intent: order_dish
+    examples: |
+      - I want a [Lasagne](dish)
+      - Can i take a [Pizza](dish) ?
+      - Can i get a [Hot-Dog](dish) ?
+      - I will take [Spaghetti Carbonara](dish)
+      - I choose (dish) (dish)
+      - I want to order a [Tiramisu](dish) and [Burger](dish)
+      - I order a [Pizza](dish)
+      - It's good time for [Hot-dog](dish)
+      - also, can i add a [Lasagne](dish)?
+      - and i want [Pizza](dish)
+      - add also a [Tiramisu](dish)
+
+  - intent: get_order_list
+    examples: |
+      - List?
+      - Show me what is on my list
+      - What is on my list?
+      - What did I take so far?
+      - Will you remind me what I took ?
+      - Remind me what i took
+
+  - intent: get_bill
+    examples: |
+      - Ok. Its all.
+      - And that's all
+      - I'm done
+      - That's all I wanted
+      - It's everything I wante

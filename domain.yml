@@ -1,0 +1,76 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - opening_information
+  - deny
+  - get_menu
+  - order_dish
+  - get_order_list
+  - get_bill
+  - bot_challenge
+
+entities:
+  - day
+  - dish
+  - order
+  - hour
+
+slots:
+  hour:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: hour
+  day_available:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: day
+  question_dish:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: dish
+  order:
+    type: list
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: order
+
+actions:
+- action_menu_fallback
+- action_hours_fallback
+- action_order_fallback
+- action_get_order_fallback
+- action_get_bill_fallback
+
+responses:
+  utter_greet:
+  - text: "Hey!"
+  - text: "Hello! How can I help you?"
+
+  utter_goodbye:
+  - text: "Bye"
+  - text: "Goodbye. See you soon."
+
+  utter_ask_order:
+    - text: "Do you want see a menu?"
+    - text: "Maybe you wan to see a menu?"
+
+  utter_ask_rephrase:
+  - text: "Sorry, I'm not sure I understand. Can you rephrase?"
+  - text: "Can you please rephrase? I did not got that."
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+
+session_config:
+  session_expiration_time: 60  # value in minutes
+  carry_over_slots_to_new_session: true

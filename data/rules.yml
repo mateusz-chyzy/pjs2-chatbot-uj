@@ -1,0 +1,46 @@
+version: "3.1"
+rules:
+  - rule: greet
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: get time open
+    steps:
+      - intent: opening_information
+      - action: action_hours_fallback
+
+  - rule: ask about hours open
+    steps:
+      - intent: hours_information
+      - action: action_hours_fallback
+
+  - rule: query menu
+    steps:
+      - intent: get_menu
+      - action: action_menu_fallback
+
+  - rule: order dish
+    steps:
+      - intent: order_dish
+      - action: action_order_fallback
+
+  - rule: get summary
+    steps:
+      - intent: get_order_list
+      - action: action_get_order_fallback
+
+  - rule: get bill
+    steps:
+      - intent: get_bill
+      - action: action_get_bill_fallback
+
+  - rule: bot challenge
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
